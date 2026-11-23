@@ -1,0 +1,914 @@
+
+
+
+
+.product-image {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+/* ==========================================================
+   02. VARIABLES GLOBALES
+   ========================================================== */
+
+:root {
+    --navy: #101b2c;
+    --blue: #2768e8;
+    --light: #f4f7fb;
+    --text: #182337;
+    --muted: #68758a;
+    --border: #e4e9f1;
+}
+
+/* ==========================================================
+   03. CONFIGURACIÓN GENERAL
+   ========================================================== */
+* {
+box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ color: var(--text);
+ background: #fff;
+font-family: 'DM Sans', Arial, sans-serif;
+}
+
+main {
+ max-width: 1200px;
+ margin: auto;
+ padding: 0 24px;
+}
+
+h2 {
+ font: 600 25px 'Space Grotesk', sans-serif;
+ margin: 0 0 20px;
+}
+
+/* ==========================================================
+   04. ENCABEZADO / HEADER
+   ========================================================== */
+
+.header {
+ height: 78px;
+ padding: 0 6%;
+
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
+
+ border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+
+color: var(--navy);
+ font: 700 22px 'Space Grotesk', sans-serif;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+.logo-mark {
+    display: grid;
+    place-items: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+    background: var(--blue);
+    color: white;
+}
+
+
+/* Buscador */
+
+.search {
+    display: flex;
+
+    max-width: 500px;
+    width: 48%;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    background: #f8fafc;
+}
+
+.search input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 15px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+    font: inherit;
+}
+
+.search button {
+    width: 48px;
+
+    border: 0;
+    background: var(--blue);
+    color: white;
+
+    font-size: 23px;
+    cursor: pointer;
+}
+
+
+/* Botón del carrito */
+
+.cart-button {
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--navy);
+    color: white;
+
+    padding: 11px 15px;
+
+    cursor: pointer;
+    font: inherit;
+}
+
+#cartCount {
+    display: inline-grid;
+    place-items: center;
+
+    margin-left: 5px;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+    background: var(--blue);
+}
+
+
+/* ==========================================================
+   05. NAVEGACIÓN
+   ========================================================== */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+
+    padding: 17px 10px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: var(--blue);
+}
+
+
+/* ==========================================================
+   06. PRESENTACIÓN PRINCIPAL / HERO
+   ========================================================== */
+
+.hero {
+    margin: 34px 0 52px;
+    padding: 54px 6%;
+
+    min-height: 320px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(115deg, #101b2c, #1d3760);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+
+/* Contenido del Hero */
+
+.hero-content {
+    max-width: 530px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #75a4ff;
+
+    margin: 0 0 12px;
+}
+
+.hero h1 {
+    font: 700 clamp(36px, 5vw, 56px) 'Space Grotesk', sans-serif;
+    line-height: 1.05;
+
+    margin: 0 0 18px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    color: #d2dced;
+
+    max-width: 440px;
+    line-height: 1.7;
+}
+
+
+/* Botón principal */
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 12px;
+    padding: 13px 18px;
+
+    border-radius: 8px;
+
+    background: #fff;
+    color: var(--navy);
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+/* Ilustración electrónica */
+
+.hero-art {
+    width: 270px;
+    height: 270px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* Círculo */
+
+.circuit-circle {
+    position: relative;
+
+    width: 230px;
+    height: 230px;
+
+    border: 2px solid #4774b8;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    box-shadow:
+        0 0 0 22px #ffffff08,
+        0 0 0 44px #ffffff05;
+}
+
+.circuit-circle span {
+    font: 700 100px 'Space Grotesk', sans-serif;
+    color: #5d91ee;
+}
+
+
+/* Elementos decorativos */
+
+.circuit-circle i,
+.circuit-circle b {
+    position: absolute;
+
+    width: 65px;
+    height: 12px;
+
+    background: #5d91ee;
+    border-radius: 3px;
+}
+
+.circuit-circle i {
+    top: 35px;
+    right: -12px;
+
+    transform: rotate(45deg);
+}
+
+.circuit-circle b {
+    bottom: 35px;
+    left: -12px;
+
+    transform: rotate(45deg);
+}
+
+
+/* ==========================================================
+   07. CATEGORÍAS
+   ========================================================== */
+
+.categories {
+    margin-bottom: 55px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+
+/* Tarjetas */
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: white;
+    color: var(--text);
+
+    cursor: pointer;
+    transition: 0.2s;
+
+    font: 500 14px 'DM Sans', sans-serif;
+}
+
+
+/* Iconos */
+
+.category-card span {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: #edf3ff;
+    color: var(--blue);
+
+    font-size: 23px;
+}
+
+
+/* Efecto */
+
+.category-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   08. CATÁLOGO
+   ========================================================== */
+
+.catalog {
+    padding-bottom: 65px;
+}
+
+
+/* Encabezado */
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading select {
+    padding: 10px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--text);
+    background: white;
+}
+
+
+/* Grilla */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+/* Tarjeta del producto */
+
+.product-card {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    transition: 0.2s;
+    background: white;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px #18233712;
+    transform: translateY(-3px);
+}
+
+
+/* Imagen del producto */
+
+.product-image {
+    height: 165px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--light);
+
+    font-size: 58px;
+}
+
+
+/* Información del producto */
+
+.product-info {
+    padding: 16px;
+}
+
+.product-category {
+    color: var(--muted);
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-info h3 {
+    font-size: 15px;
+    margin: 8px 0;
+
+    min-height: 38px;
+}
+
+.product-description {
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    min-height: 36px;
+}
+
+
+/* Precio y botón */
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.price {
+    font: 700 18px 'Space Grotesk', sans-serif;
+}
+
+.add-button {
+    border: 0;
+    border-radius: 8px;
+
+    background: var(--blue);
+    color: white;
+
+    padding: 9px 12px;
+
+    cursor: pointer;
+    font: 600 13px 'DM Sans', sans-serif;
+}
+
+.add-button:hover {
+    background: #1754ca;
+}
+
+
+/* Mensaje sin productos */
+
+.empty-message {
+    text-align: center;
+    padding: 40px;
+
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   09. PIE DE PÁGINA / FOOTER
+   ========================================================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 25px 6%;
+
+    background: var(--navy);
+    color: #b9c5d6;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   10. CARRITO DE COMPRAS
+   ========================================================== */
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: 20;
+
+    width: min(420px, 100%);
+    height: 100%;
+
+    padding: 24px;
+
+    background: white;
+
+    transform: translateX(100%);
+    transition: transform 0.25s;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: -10px 0 40px #0001;
+}
+
+
+/* Carrito abierto */
+
+.cart-panel.open {
+    transform: translateX(0);
+}
+
+
+/* Encabezado del carrito */
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.cart-header button {
+    border: 0;
+    background: none;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Lista */
+
+.cart-items {
+    flex: 1;
+
+    overflow: auto;
+
+    padding: 12px 0;
+}
+
+
+/* Producto del carrito */
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-item h4 {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.cart-item p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* Cantidad */
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* Resumen */
+
+.cart-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+}
+
+.cart-footer p {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 18px;
+}
+
+
+/* Botón finalizar */
+
+.checkout {
+    width: 100%;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--blue);
+    color: white;
+
+    padding: 14px;
+
+    cursor: pointer;
+    font: 700 15px 'DM Sans', sans-serif;
+}
+
+
+/* ==========================================================
+   11. OVERLAY / FONDO DEL CARRITO
+   ========================================================== */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 19;
+
+    background: #0b1426aa;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.25s;
+}
+
+
+/* Overlay activo */
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE - TABLETS
+   ========================================================== */
+
+@media (max-width: 850px) {
+
+    /* Productos */
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Categorías */
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* Ilustración */
+
+    .hero-art {
+        width: 190px;
+    }
+
+    .circuit-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .circuit-circle span {
+        font-size: 75px;
+    }
+}
+
+
+/* ==========================================================
+   13. RESPONSIVE - CELULARES
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    .header {
+        height: auto;
+        padding: 15px 4%;
+
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .search {
+        order: 3;
+
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* Navegación */
+
+    .nav {
+        justify-content: flex-start;
+
+        overflow: auto;
+
+        gap: 22px;
+        padding: 14px 18px;
+
+        white-space: nowrap;
+    }
+
+
+    /* Contenido */
+
+    main {
+        padding: 0 15px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 32px 25px;
+
+        min-height: 260px;
+
+        margin: 22px 0 38px;
+    }
+
+    .hero-art {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
+    /* Categorías */
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Productos */
+
+    .product-grid {
+        gap: 10px;
+    }
+
+    .product-image {
+        height: 125px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .product-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    /* Título del catálogo */
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 12px;
+
+        flex-direction: column;
+    }
+
+
+    /* Footer */
+
+    footer {
+        flex-direction: column;
+
+    }
+}
+
+
+/* ==========================================================
+   FIN DEL CSS - VOLTEC
+   ========================================================== */
